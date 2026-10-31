@@ -31,3 +31,11 @@ El repositorio se puede publicar como sitio estático sin build. En GitHub Pages
 ## Diseño
 
 Negro, rojo y blanco. Imágenes de marca generadas con la herramienta integrada de generación de imágenes durante la creación de la identidad. Tipografías Manrope y DM Sans servidas por Google Fonts, con fuentes de sistema como respaldo. Botones de contacto abren WhatsApp; no se cobra ni se registra una inscripción automáticamente.
+
+## Testimonios
+
+La sección está implementada en `testimonials.js`. Añade nombre, tipo (Estudiante o Cliente), comentario aprobado y/o enlace HTTPS al video; marca `approved: true` solo con permiso para publicar. Sin testimonios válidos, la sección muestra dos espacios rotulados «Videos próximamente». Al añadir testimonios válidos, estos reemplazan automáticamente los espacios de diseño. No se incluyen reseñas de ejemplo en producción.
+
+## Vista móvil
+
+Resumen breve, tarjetas compactas de herramientas, dos clases, retratos sin recortar y botón fijo de inscripción. Las dudas adicionales permanecen en desplegables.
