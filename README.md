@@ -22,7 +22,7 @@ Desde esta carpeta ejecuta `python3 -m http.server 5173` y abre http://localhost
 
 ## Pendientes de contenido
 
-Añadir fotos de profesores, videos del portafolio y testimonios reales cuando estén disponibles. Confirmar requisitos de equipo, licencias, plataforma de clases y condiciones de acceso al grupo. La página no inventa testimonios, garantías ni certificados.
+Fotos de profesores incorporadas. Añadir videos del portafolio y testimonios reales cuando estén disponibles. Confirmar requisitos de equipo, licencias, plataforma de clases y condiciones de acceso al grupo. La página no inventa testimonios, garantías ni certificados.
 
 ## Publicación
 

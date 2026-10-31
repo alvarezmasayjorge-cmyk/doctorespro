@@ -7,3 +7,6 @@
 @media(max-width:380px){.hero-actions{gap:16px}.hero-actions .button{padding-inline:16px;gap:14px;font-size:12px;white-space:nowrap}.price-inline{flex-shrink:0}.price-inline strong{white-space:nowrap;font-size:22px}}
 
 .icon{display:inline-block;width:1em;height:1em;vertical-align:-.13em;flex-shrink:0}.visual-ai .icon-ai{width:90px;height:90px;stroke-width:2.2}.price-card li{display:flex;align-items:baseline;gap:12px}.icon-check{color:var(--red);width:14px;height:14px}.support-icon{line-height:1}.nav-cta>.icon{margin-left:12px}@media(max-width:700px){.visual-ai .icon-ai{width:52px;height:52px}.nav-cta>.icon{margin-left:6px}}
+
+/* Instructor portraits: original proportions, no image filters or cropping. */
+.teacher{flex-direction:column;gap:24px}.teacher-photo{display:block;width:100%;max-width:360px;height:auto;border-radius:8px;background:#d5d0ca}.teacher>div{max-width:420px}@media(max-width:700px){.teacher{gap:22px}.teacher-photo{max-width:100%}}
