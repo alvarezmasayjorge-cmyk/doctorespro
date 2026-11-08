@@ -79,3 +79,4 @@ server.listen(PORT, () => {
   console.log(`📁 Carpeta raíz: ${__dirname}`);
   console.log(`Presiona Ctrl + C para detener.\n`);
 });
+

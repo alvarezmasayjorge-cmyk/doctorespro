@@ -51,3 +51,4 @@ if (errors > 0) {
 } else {
   console.log('\n✨ Todas las verificaciones pasaron exitosamente.');
 }
+

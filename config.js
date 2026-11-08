@@ -26,3 +26,4 @@ window.DOCTORES_PRO_CONFIG = {
   // Ciudad de cobertura
   city: "Santa Cruz de la Sierra, Bolivia"
 };
+

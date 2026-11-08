@@ -5,39 +5,43 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const distDir = path.join(__dirname, 'dist');
+const targets = ['dist', 'public'];
 
-console.log('📦 Construyendo sitio estático en carpeta dist/...\n');
+console.log('📦 Construyendo sitio estático para producción y despliegue (Vercel / Netlify / Cloudflare)...\n');
 
-// 1. Limpiar o crear dist/
-if (fs.existsSync(distDir)) {
-  fs.rmSync(distDir, { recursive: true, force: true });
-}
-fs.mkdirSync(distDir, { recursive: true });
+for (const target of targets) {
+  const outDir = path.join(__dirname, target);
 
-// 2. Archivos raíz a copiar
-const filesToCopy = [
-  'index.html',
-  'styles.css',
-  'main.js',
-  'config.js'
-];
-
-for (const file of filesToCopy) {
-  const src = path.join(__dirname, file);
-  const dest = path.join(distDir, file);
-  if (fs.existsSync(src)) {
-    fs.copyFileSync(src, dest);
-    console.log(`✅ Copiado: ${file} -> dist/${file}`);
+  // 1. Limpiar o crear directorio de salida
+  if (fs.existsSync(outDir)) {
+    fs.rmSync(outDir, { recursive: true, force: true });
   }
+  fs.mkdirSync(outDir, { recursive: true });
+
+  // 2. Archivos raíz a copiar
+  const filesToCopy = [
+    'index.html',
+    'styles.css',
+    'main.js',
+    'config.js'
+  ];
+
+  for (const file of filesToCopy) {
+    const src = path.join(__dirname, file);
+    const dest = path.join(outDir, file);
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, dest);
+    }
+  }
+
+  // 3. Copiar carpeta assets si existe
+  const assetsSrc = path.join(__dirname, 'assets');
+  const assetsDest = path.join(outDir, 'assets');
+  if (fs.existsSync(assetsSrc)) {
+    fs.cpSync(assetsSrc, assetsDest, { recursive: true });
+  }
+
+  console.log(`✅ Carpeta generada correctamente: ${target}/`);
 }
 
-// 3. Copiar carpeta assets si existe
-const assetsSrc = path.join(__dirname, 'assets');
-const assetsDest = path.join(distDir, 'assets');
-if (fs.existsSync(assetsSrc)) {
-  fs.cpSync(assetsSrc, assetsDest, { recursive: true });
-  console.log(`✅ Copiada carpeta: assets/ -> dist/assets/`);
-}
-
-console.log('\n✨ Build estático terminado en dist/. Listo para subir a cualquier hosting estático (Vercel, Netlify, Cloudflare Pages, GitHub Pages).');
+console.log('\n✨ Build terminado exitosamente compatible con Vercel (dist/ y public/).');
